@@ -4,7 +4,7 @@ Moves files to a new folder and deletes the old folder afterwards
 ## How to use:
 
 ```
-const mv_rm = require("main.js");
+const mv_rm = require("main");
   mv_rm("/path/old/", "/path/new", { //       set the old path and the new path
     permissions: "0755", //                   sets new folder permissions **defaul 0755**
     file_permissions: "0777", //              sets new file permissions **default 0644**
