@@ -1,0 +1,10 @@
+{
+  "name": "mv_rm",
+  "version": "0.9.1",
+  "description": "Moves files to a new folder and deletes the old folder afterwards",
+  "main": "main.js",
+  "repository": "https://github.com/BillGR17/mv_rm.git",
+  "author": "BillGR17 <11507104+BillGR17@users.noreply.github.com>",
+  "license": "MIT",
+  "private": false
+}
