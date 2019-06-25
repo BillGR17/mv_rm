@@ -178,17 +178,6 @@ async function readArem(p) {
   await check(p).then(async (x) => {
     if (x.isDirectory) {
       await readdir(p).then(async (f) => {
-        //if no files check if its directory
-        //then delete it
-        if (!f.length) {
-          if (fs.statSync(p).isDirectory()) {
-            fs.rmdirSync(p, (e) => {
-              console.log(e);
-            });
-          } else {
-            await rm(p);
-          }
-        }
         //for each file check if its directory
         //then call this function again
         //otherwise remove file
@@ -198,6 +187,13 @@ async function readArem(p) {
           } else {
             await rm(p + f[i]);
           }
+        }
+        if (fs.statSync(p).isDirectory()) {
+          fs.rmdirSync(p, (e) => {
+            console.log(e);
+          });
+        } else {
+          await rm(p);
         }
       }).catch((e) => {
         console.log(e);
