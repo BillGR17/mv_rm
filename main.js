@@ -182,7 +182,9 @@ async function readArem(p) {
         //then delete it
         if (!f.length) {
           if (fs.statSync(p).isDirectory()) {
-            fs.rmdirSync(p, (e) => {
+            fs.rmdirSync(p, {
+              recursive: true
+            }, (e) => {
               console.log(e);
             });
           } else {
