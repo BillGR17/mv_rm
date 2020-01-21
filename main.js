@@ -74,7 +74,7 @@ function move(m, l, f, allow) {
         }
       });
     } else {
-      rej("Skipping moving folder", m + f);
+      rej("Skipping moving folder" + m + f);
     }
   });
 }
