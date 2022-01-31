@@ -182,7 +182,7 @@ async function readArem(p) {
         //then delete it
         if (!f.length) {
           if (fs.statSync(p).isDirectory()) {
-            fs.rmdirSync(p, {
+            fs.rmSync(p, {
               recursive: true
             }, (e) => {
               console.log(e);
@@ -253,7 +253,7 @@ async function main(mv, loc, perm, fperm, files, allow) {
   }
   //remove old folder
   await readArem(mv);
-  //check permissions and fix them on 
+  //check permissions and fix them on
   //the new folder
   await chperm(loc, perm, fperm);
   return status;
